@@ -15,7 +15,8 @@ namespace StatePOC
             Console.WriteLine($"Current State:{entityStateMachine.StateMachine}");
 
             // Show machine
-            string graph = UmlDotGraph.Format(entityStateMachine.StateMachine.GetInfo());
+            var machineInfo = entityStateMachine.StateMachine.GetInfo();
+            string graph = UmlDotGraph.Format(machineInfo);
             var urlGraph = HttpUtility.UrlEncode(graph.Replace(" ", ""));
             var url = "https://edotor.net/?engine=dot#" + urlGraph;
 

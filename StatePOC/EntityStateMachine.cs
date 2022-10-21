@@ -31,6 +31,9 @@ namespace StatePOC
                 .Permit(EntityTrigger.LoadFail, EntityState.NotSet)
                 .Permit(EntityTrigger.Setted, EntityState.Set);
 
+            
+            // Substates are not really well handled on the generated diagram
+
             #region Substates of Loading
 
             entityStateMachine.Configure(EntityState.LoadingFromServer)
